@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem "paperclip"
 gem 'rails', '4.2.5'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
@@ -14,6 +14,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry'
+  
   gem 'web-console', '~> 2.0'
 end
-
