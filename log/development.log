@@ -910,3 +910,49 @@ ActionController::RoutingError (No route matches [GET] "/images/thumb/missing.gi
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.3ms)
+
+
+Started GET "/songs" for 120.87.32.52 at 2018-04-08 01:36:38 +0000
+Cannot render console from 120.87.32.52! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.6ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered songs/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/thumb/missing-e74560f6b53a7d38c81f71b531aaddab88acb9f6f1b3a5a306a3eb2b60fe7031.gif" for 120.87.32.52 at 2018-04-08 01:36:39 +0000
+Cannot render console from 120.87.32.52! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/songs/new" for 120.87.32.52 at 2018-04-08 01:37:02 +0000
+Cannot render console from 120.87.32.52! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#new as HTML
+  Rendered songs/_form.html.erb (14.6ms)
+  Rendered songs/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/songs" for 120.87.32.52 at 2018-04-08 01:37:30 +0000
+Cannot render console from 120.87.32.52! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OQbTPI4oF4x3UCRqSpc+PAM2cOr+MY3jU4XSMkbZXnAy9K2scPzB95R+f3EiKzqd+RfmCE6DwzSgNV2MS4lkDw==", "song"=>{"title"=>"q", "album_cover"=>#<ActionDispatch::Http::UploadedFile:0x00000003c848c8 @tempfile=#<Tempfile:/tmp/RackMultipart20180408-2861-qfj0za.jpg>, @original_filename="153.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"song[album_cover]\"; filename=\"153.jpg\"\r\nContent-Type: image/jpeg\r\n">, "artist_name"=>"a"}, "commit"=>"Create Song"}
+Unpermitted parameter: album_cover
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "a"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "a"], ["created_at", "2018-04-08 01:37:30.414361"], ["updated_at", "2018-04-08 01:37:30.414361"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "q"], ["artist_id", 7], ["created_at", "2018-04-08 01:37:30.419111"], ["updated_at", "2018-04-08 01:37:30.419111"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://165.227.81.218:45098/songs/11
+Completed 302 Found in 17ms (ActiveRecord: 4.8ms)
